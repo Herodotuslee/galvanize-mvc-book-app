@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    .book{
+        border: 1px solid black;
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+          }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Book Dicussion</h1>
+      <a href="./newBook"><h2>Add New Book</h2></a>
+
+
+      <% for(let i=0; i < result.length;i++){ %>
+<div class="book">
+     <h3>Title: <%=result[i].title %></h3>
+     <img src="" alt="">
+     <h4>Description: <%=result[i].desc %></h4>
+     <a href="/comments/<%=result[i].id %>">Discussion</a>
+
+ </div>
+ <% } %>
+</div>
+
+    </div>
+
+
+  </body>
+</html>

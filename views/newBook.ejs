@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="./index">Back</a>
+    <h1>New Book</h1>
+
+    <form action="/newBook" method="POST">
+       <input type="text" name="title" placeholder="Title"><br>
+       <input type="text" name="imgurl" placeholder="image url"><br>
+       <input type="desc" name="desc" placeholder="description"><br>
+       <select name="author_id" id="">
+          <%authors.forEach(author => {%>
+          <option value="<%=author.id%>"><%=author.name%></option>
+          <%})%>
+      </select>
+        <!-- <input type="desc" name="author_id" placeholder="author_id"><br> -->
+       <!-- <textarea name="desc" id="" cols="30" rows="10" placeholder="Description..."></textarea> -->
+       <button>Create</button>
+   </form>
+   <a href="/author">Add a new author</a>
+  </body>
+</html>
