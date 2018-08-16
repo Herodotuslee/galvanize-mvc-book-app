@@ -3,24 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/grid.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
   </head>
   <body>
-    <a href="./index">Back</a>
-    <h1>New Book</h1>
-
+    <a href="/">Back</a>
+    <h1 class='add_Btn'>New Book</h1>
+<!-- POST A NEW BOOK -->
     <form action="/newBook" method="POST">
-       <input type="text" name="title" placeholder="Title"><br>
-       <input type="text" name="imgurl" placeholder="image url"><br>
-       <input type="desc" name="desc" placeholder="description"><br>
-       <select name="author_id" id="">
+       <input class="comment_box" type="text" name="title" placeholder="Title"><br>
+       <input class="comment_box" type="text" name="imgurl" placeholder="image url"><br>
+       <input class="comment_box" type="desc" name="desc" placeholder="description"><br>
+       <select class="comment_box" name="author_id" id="">
           <%authors.forEach(author => {%>
           <option value="<%=author.id%>"><%=author.name%></option>
           <%})%>
-      </select>
+      </select><br>
         <!-- <input type="desc" name="author_id" placeholder="author_id"><br> -->
        <!-- <textarea name="desc" id="" cols="30" rows="10" placeholder="Description..."></textarea> -->
-       <button>Create</button>
+       <button class="comment_box">Create</button>
    </form>
-   <a href="/author">Add a new author</a>
+<!-- GO TO ADD A NEW AUTHOR -->
+<button class="comment_box"> <a href="/author">Add a new author</a></button>
+
   </body>
 </html>

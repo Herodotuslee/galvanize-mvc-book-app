@@ -26,7 +26,6 @@ module.exports = {
           });
       },
 
-
     addBook: (req, res) => {
       knex('books').insert({
           title:req.body.title,
@@ -41,20 +40,5 @@ module.exports = {
           console.error(err)
         });
     },
-    // landingNewBook:(req,res)=>{
-    //   knex.select()
-    //   .from('author')
-    //   .then((result)=>{
-    //     // res.send(result)
-    //     res.render('newBook',{author})
-    //   }).catch((err) => {
-    //       console.error(err)
-    //     });
-    //
-    // }
-
-
-
-
 
 }

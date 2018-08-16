@@ -4,9 +4,9 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('authors').insert([
-        {name: 'Albert', bio: 'AAAAAAAAAAAA.'},
-        {name: 'Elijah', bio: 'BBBBBBBBBBBB.'},
-        {name: 'Nhan', bio: 'CCCCCCCCCCCCCC.'}
+        {name: 'Albert', bio: 'I am Albert'},
+        {name: 'Elijah', bio: 'I am cool'},
+        {name: 'Nhan', bio: 'I like to sleep .'}
       ]);
     });
 };

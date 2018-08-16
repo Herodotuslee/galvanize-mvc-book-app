@@ -3,34 +3,42 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <style>
-    .book{
-        border: 1px solid black;
-        display: inline-block;
-        padding: 10px;
-        margin: 10px;
-          }
-    </style>
+    <!-- <link rel="stylesheet" type="text/css" href="./normalize.css"> -->
+    <link rel="stylesheet" type="text/css" href="./grid.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
   </head>
   <body>
+    <section>
+      <div class="container">
+        <h1 class='title'>Book Dicussion</h1>
+<!-- TO ADD NEW BOOK -->
+        <div class="add_Btn">
+          <a  href="./newBook">Add New Book</a>
+        </div>
 
-    <div class="container">
-      <h1>Book Dicussion</h1>
-      <a href="./newBook"><h2>Add New Book</h2></a>
+<!-- SHOW ALL BOOKS -->
+        <% for(let i=0; i < result.length;i++){ %>
+  <div class="book">
+       <h3 class='booktitle'>Title: <%=result[i].title %></h3>
+       <img src="<%= result[i].img_url%>"  alt="xx">
+       <div class="description">
+          <h4> <%=result[i].desc %></h4><br>
+
+       </div>
+
+<!-- SHOR MORE INFO -->
+       <a href="/comments/<%=result[i].id %>">Discussion</a>
+       <a href="/"></a>
+
+   </div>
+   <% } %>
+  </div>
+
+      </div>
 
 
-      <% for(let i=0; i < result.length;i++){ %>
-<div class="book">
-     <h3>Title: <%=result[i].title %></h3>
-     <img src="" alt="">
-     <h4>Description: <%=result[i].desc %></h4>
-     <a href="/comments/<%=result[i].id %>">Discussion</a>
+    </section>
 
- </div>
- <% } %>
-</div>
-
-    </div>
 
 
   </body>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./test.css">
+  </head>
+  <body>
+    <h1>Test</h1>
+
+  </body>
+</html>
+
+
+        <% for(let i=0; i < comments_result.length;i++){ %>
+         <div class="comment_box">
+
+           <h3><%= comments_result[i].commenter_name%> : </h3>
+           <p><%= comments_result[i].comment%></p>

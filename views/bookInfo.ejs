@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/grid.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  </head>
+  <body>
+      <a href="/">Back</a>
+    <h1>Book Information</h1>
+
+<!-- SHOW BOOK TITLE AND Description -->
+    <div class="box">
+      <h1><%= book_result[0].title%></h1>
+      <img src="<%= book_result[0].img_url%>"  alt="xx">
+      <h3>Description:</h2><br>
+      <p> <%= book_result[0].desc%></p>
+
+    </div>
+
+<!-- SHOW ALL COMMENTS -->
+       <% for(let i=0; i < book_result.length;i++){ %>
+        <div class="comment_box">
+          <h3><%=book_result[i].commenter_name%> : </h3>
+          <p><%= book_result[i].comment%></p>
+
+<!-- DELETE ONE COMMENT -->
+        <form class="" action="/comments/deleteComment/<%=book_result[i].comment_id%>" method="get">
+            <input type="submit" value="X">
+        </form>
+
+        </div>
+        <% } %>
+
+
+
+<!-- POST A COMMENT -->
+    <h3>Post your comment</h3>
+    <form class="" action="/comments/<%=book_result[0].id%>" method="post">
+      <input class='comment_box'  type="text" name="commenter_name" placeholder="guest">
+      <br>
+      <input class='comment_box' type="text" name="comment" placeholder="blah"><br>
+      <input class='comment_box'  type="submit" value="Submit">
+
+    </form>
+
+<!-- DELETE THIS BOOK -->
+    <form class="comment_box" action="/comments/deleteBook/<%=book_result[0].id%>" method="get">
+      <input type="submit" value="Delete Book">
+    </form>
+
+
+  </body>
+</html>
